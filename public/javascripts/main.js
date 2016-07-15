@@ -29,7 +29,7 @@ var loadCorgis = function(){
     $('#corgis').empty();
 
 
-      $('#corgis').append(`<div class="corgi"><img src="${corgi.image_url}"><h3>Name: ${corgi.name}</h3><p> Age: ${corgi.age} </p> <p> Interests: ${corgi.interests} </p> </div>`)
+      $('#corgis').append(`<div class="corgi"><img src="${corgi.image_url}"><h3>Name: ${corgi.name}</h3><p> Age: ${corgi.age} </p> <p> Interests: ${corgi.interests} </p> <button type="button" class="btn btn-primary btn-like">Like</button> <button type="button" class="btn btn-danger btn-dislike">Dislike</button> </div>`)
     }
 
 
