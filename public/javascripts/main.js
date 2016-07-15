@@ -67,12 +67,32 @@ var loadCorgis = function(){
 
 ///////// LIKE ////////////
 
-$('.btn-like').click(function(){
+var likeCorgi = function(likeCorgiId){
+    $.ajax({
+      method: 'PATCH',
+      url: '/corgis/' + likeCorgiId + '/like',
+      data: {
+        liked: true
+      }
+    })
+    .done(function(data){
+      console.log('liked', data)
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+      console.log('like failed'+ textStatus)
+    })
+    .always(function(){
+      console.log('like completed')
+    })
+  }
 
+  $('#corgis').on('click', '.btn-like', function(){
 
+      var likeCorgiId = $(this).data('corgi-id');
 
+      likeCorgi(likeCorgiId);
 
-}
+  })
 
 
 
