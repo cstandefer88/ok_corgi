@@ -33,6 +33,16 @@ var loadCorgis = function(){
     }
 
 
+  // var displayLikesOnlySection = function() {
+  //   $.ajax({
+  //     url:
+  //     method:
+  //     data:
+  //     dataType:"json"
+  //   })
+  // }
+
+
     $('.btn-create').click(function(){
     var name = $('#name').val();
     var image = $('#image').val();
@@ -71,9 +81,7 @@ var likeCorgi = function(likeCorgiId){
     $.ajax({
       method: 'PATCH',
       url: '/corgis/' + likeCorgiId + '/like',
-      data: {
-        liked: true
-      }
+      data: {}
     })
     .done(function(data){
       console.log('liked', data.liked)
@@ -87,8 +95,47 @@ var likeCorgi = function(likeCorgiId){
   }
 
   $('#corgis').on('click', '.btn-like', function(){
-    var likeCorgiId = $(this).data('corgi-id');
-    likeCorgi(likeCorgiId);
+
+
+    console.log('button is working')
+      var likeCorgiId = $(this).data('corgi-id');
+
+
+      likeCorgi(likeCorgiId);
+      loadCorgis();
+
+
+  })
+
+
+///////// DISLIKE ////////////
+
+var dislikeCorgi = function(dislikeCorgiId){
+    $.ajax({
+      method: 'PATCH',
+      url: '/corgis/' + dislikeCorgiId + '/dislike',
+      data: {}
+    })
+    .done(function(data){
+      console.log('disliked', data)
+
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+      console.log('dislike failed'+ textStatus)
+    })
+    .always(function(){
+      console.log('dislike completed')
+    })
+  }
+
+  $('#corgis').on('click', '.btn-dislike', function(){
+
+    console.log('button is working')
+      var dislikeCorgiId = $(this).data('corgi-id');
+
+
+      dislikeCorgi(dislikeCorgiId);
+      loadCorgis();
 
   })
 

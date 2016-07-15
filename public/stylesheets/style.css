@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+.btn-lg {
+  position: fixed;
+  top: 2px;
+  right: 2px;
+}
+
+h1 {
+  text-align: center;
+}
+
+section {
+  text-align: center;
+}
+
