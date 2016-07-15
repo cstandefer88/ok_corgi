@@ -97,6 +97,36 @@ var likeCorgi = function(likeCorgiId){
   })
 
 
+///////// DISLIKE ////////////
+
+var dislikeCorgi = function(dislikeCorgiId){
+    $.ajax({
+      method: 'PATCH',
+      url: '/corgis/' + dislikeCorgiId + '/dislike',
+      data: {}
+    })
+    .done(function(data){
+      console.log('disliked', data)
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+      console.log('dislike failed'+ textStatus)
+    })
+    .always(function(){
+      console.log('dislike completed')
+    })
+  }
+
+  $('#corgis').on('click', '.btn-dislike', function(){
+
+    console.log('button is working')
+      var dislikeCorgiId = $(this).data('corgi-id');
+
+
+      dislikeCorgi(dislikeCorgiId);
+      loadCorgis();
+
+
+  })
 
 
 

@@ -44,7 +44,11 @@ router.patch('/:id/like', function(req, res, next){
 });
 
 
-router.patch('/:id/unlike', function(req, res){
+router.patch('/:id/dislike', function(req, res){
+  Corgi.findByIdAndUpdate(req.params.id, { liked: false }, function(err, corgi){
+    if (err) console.log(err);
+    res.json(corgi);
+  })
 });
 
 module.exports = router;
