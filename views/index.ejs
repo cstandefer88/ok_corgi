@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>OKCorgi!</title>
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+ </head>
+ <body>
+    <h1>OKCorgi</h1>
+    <section id="corgis">
+
+    </section>
+
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">+ Create Corgi</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add Corgi</h4>
+          </div>
+          <div class="modal-body">
+           <form name="create-form" id="create-form">
+             <div class="form-group">
+               <label for="name" class="control-label">Name:</label>
+               <input type="text" class="form-control" id="name">
+             </div>
+             <div class="form-group">
+               <label for="photo" class="control-label">Add Photo:</label>
+               <input type="text" class="form-control" id="photo">
+             </div>
+             <div class="form-group">
+               <label for="interests" class="control-label">Interests:</label>
+               <input type="text" class="form-control" id="interests">
+             </div>
+             <div class="form-group">
+               <label for="age" class="control-label">Age:</label>
+               <input type="text" class="form-control" id="age">
+             </div>
+           </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary btn-create">Create Show</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+  </body>
+</html>
