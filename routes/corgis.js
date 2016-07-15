@@ -36,6 +36,7 @@ router.post('/', function(req, res, next){
 });
 
 router.patch('/:id/like', function(req, res){
+
 });
 
 router.patch('/:id/unlike', function(req, res){
