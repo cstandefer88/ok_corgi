@@ -76,7 +76,7 @@ var likeCorgi = function(likeCorgiId){
       }
     })
     .done(function(data){
-      console.log('liked', data)
+      console.log('liked', data.liked)
     })
     .fail(function(jqXHR, textStatus, errorThrown){
       console.log('like failed'+ textStatus)
@@ -87,10 +87,8 @@ var likeCorgi = function(likeCorgiId){
   }
 
   $('#corgis').on('click', '.btn-like', function(){
-
-      var likeCorgiId = $(this).data('corgi-id');
-
-      likeCorgi(likeCorgiId);
+    var likeCorgiId = $(this).data('corgi-id');
+    likeCorgi(likeCorgiId);
 
   })
 
