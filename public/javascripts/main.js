@@ -71,9 +71,7 @@ var likeCorgi = function(likeCorgiId){
     $.ajax({
       method: 'PATCH',
       url: '/corgis/' + likeCorgiId + '/like',
-      data: {
-        liked: true
-      }
+      data: {}
     })
     .done(function(data){
       console.log('liked', data)
@@ -88,9 +86,13 @@ var likeCorgi = function(likeCorgiId){
 
   $('#corgis').on('click', '.btn-like', function(){
 
+    console.log('button is working')
       var likeCorgiId = $(this).data('corgi-id');
 
+
       likeCorgi(likeCorgiId);
+      loadCorgis();
+
 
   })
 
