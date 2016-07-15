@@ -34,24 +34,27 @@ var loadCorgis = function(){
 
 
     $('.btn-create').click(function(){
-    var artist = $('#artist').val();
-    var venue = $('#venue').val();
-    var date = $('#date').val();
+    var name = $('#name').val();
+    var image = $('#image').val();
+    var interests = $('#interests').val();
+    var age = $('#age').val();
+
 
     $.ajax({
       method: 'POST',
-      url: '/api/v1/concerts/',
+      url: '/corgis',
       data:{
-        artist: artist,
-        venue: venue,
-        date: date
+        name: name,
+        image: image,
+        interests: interests,
+        age: age
       }
     })
     .done(function(data){
       console.log('created:', data)
       $('#myModal').modal('hide');
 
-      $('#concerts').append(`<div class="concert"><h3>${data.artist}</h3><p>${data.venue}</p><p>${data.date}</p><button type="button" class="btn btn-danger" data-concert-id="${data._id}">Delete Show</button></div>`)
+      // $('#corgis').html(`<div class="corgi"><img src="${data.image_url}"><h3>Name: ${data.name}</h3><p> Age: ${data.age} </p> <p> Interests: ${data.interests} </p> </div>`)
     })
     .fail(function(jqXHR, textStatus, errorThrown){
       console.log('request failed'+ textStatus)
