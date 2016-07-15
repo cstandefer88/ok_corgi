@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('http://www.whiskerspawsandtales.com/wp-content/uploads/2015/10/Website-Paw-Background-010815-3.jpg');
 }
 
 a {
@@ -15,6 +16,7 @@ a {
 
 h1 {
   text-align: center;
+  color: #ffffff;
 }
 
 section {
