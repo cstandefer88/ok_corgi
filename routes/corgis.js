@@ -35,7 +35,11 @@ router.post('/', function(req, res, next){
   });
 });
 
-router.patch('/:id/like', function(req, res){
+router.patch('/:id/like', function(req, res, next){
+  Corgi.findByIdAndUpdate(req.params.id, function(err, corgi){
+    if (err) console.log(err);
+    res.json(corgi);
+  })
 });
 
 router.patch('/:id/unlike', function(req, res){
